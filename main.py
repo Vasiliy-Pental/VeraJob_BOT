@@ -33,7 +33,7 @@ headers = {
 
 reqr = requests.get(url,headers=headers)
 
-print(reqr.status_code)
+
 
 with open("projects.html", "w",encoding="utf-8") as file:
     file.write(reqr.text)
