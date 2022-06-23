@@ -32,7 +32,7 @@ headers = {
     }
 
 reqr = requests.get(url,headers=headers)
-#print(reqr.text)
+
 print(reqr.status_code)
 
 with open("projects.html", "w",encoding="utf-8") as file:
@@ -42,19 +42,6 @@ with open("projects.html",encoding="utf-8") as file:
 
 soup = BeautifulSoup(srcc,'lxml')
 articles_all = soup.find_all("span",class_=("g-user-content"))
-#print(articles)
-
-
-
-#for article_sort in articles_all:
-
-    #article_sort_url = article_sort.find("a", class_="bloko-link").get("href")
-
-    #print(article_sort_url)
-
-
-
-
 
 
 
