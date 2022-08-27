@@ -4,12 +4,9 @@ import requests
 import time
 
 
-#block av
-response = requests.get("https://cars.av.by/filter?brands[0][brand]=989&brands[0][model]=996&brands[0][generation]=1996&body_type[0]=2&engine_type[0]=1&engine_type[1]=2&engine_type[2]=3&engine_type[3]=4")
-soup = BeautifulSoup(response.content, "html.parser")
-a_title = soup.find_all(class_="listing-item__link")
+
 #token bot
-bot = telebot.TeleBot('5519264442:AAGpijRs82bJa5fwiSDRyc9bi_tpQw8L3x8')
+bot = telebot.TeleBot('None))')
 
 #block Vera_bot
 url="https://ingamejob.com/en/jobs?cities%5B0%5D=0&profession%5B0%5D=33&q=&page=1"
@@ -59,14 +56,7 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, "Привет")
     if message.text.lower() == 'как дела?':
         bot.send_message(message.from_user.id, 'Спасибо всё хорошо!')
-    if message.text.lower() == 'av':
-        for item in a_title:
-
-            item_href = "https://cars.av.by" + item.get("href")
-            bot.send_message(message.from_user.id, item_href)
-
-
-            bot.send_message(message.from_user.id, item_href)
+    
     if message.text.lower() == 'ingame':
         time.sleep(2)
         for article in articles:
